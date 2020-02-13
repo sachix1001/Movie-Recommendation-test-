@@ -1,20 +1,25 @@
 let metadata = require('../data/movies_metadata.json')
 
-metadata = metadata.map(data => {
+metadata = metadata
+.filter(data => data.popularity > 3)
+.map(data => {
   return {
     movie_id: data.id,
     genres: data.genres,
     imdb_id:Number(data.imdb_id.slice(2)),
-    // title: data.original_title,
-    overview:data.overview
+    overview:data.overview,
+    popularity: data.popularity,
   }
 })
-// console.log(metadata[16384])
+// pick populer one
+// metadata = metadata.filter(data=> data.popularity > 5)
+
+console.log(metadata.length)
 exports.seed = function(knex) {
   // Deletes ALL existing entries
   return knex('metadata').del()
     .then(function () {
       // Inserts seed entries
-      return knex('metadata').insert(metadata.slice(0,16383));
+      return knex('metadata').insert(metadata);
     });
 };

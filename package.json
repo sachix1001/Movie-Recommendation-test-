@@ -24,6 +24,7 @@
     "eject": "react-scripts eject",
     "migrate": "knex migrate:latest",
     "rollback": "knex migrate:rollback",
+    "seed": "knex seed:run",
     "dev": "nodemon ./server/index.js"
   },
   "eslintConfig": {

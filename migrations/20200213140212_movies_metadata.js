@@ -7,7 +7,7 @@ exports.up = function(knex) {
   })
   .createTable("poster", table => {
     table.increments('id').primary()
-    table.integer('imdb_id')
+    table.integer('imdb_id').notNullable()
     table.text("title")
     table.text('poster')
   })
@@ -17,9 +17,21 @@ exports.up = function(knex) {
     table.text("genres");
     table.integer('imdb_id')
     // .foreign('imdb_id').references('poster')
-    // table.text('title')
     table.text('overview')
+    table.text('popularity')
   })
+
+  // .createTable("movies", table => {
+  //   table.integer('id').primary()
+  //   table.integer("movie_id").notNullable()
+  //   table.text("genres");
+  //   table.integer('imdb_id')
+  //   table.text('overview')
+  //   table.text("title")
+  //   table.text('poster')
+  //   table.text("keywords");
+  // })
+
 
 };
 
