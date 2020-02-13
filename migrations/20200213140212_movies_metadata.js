@@ -7,7 +7,7 @@ exports.up = function(knex) {
   })
   .createTable("poster", table => {
     table.increments('id').primary()
-    table.integer('imdb_id').notNullable()
+    table.integer('imdb_id')
     table.text("title")
     table.text('poster')
   })
