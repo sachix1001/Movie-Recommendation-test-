@@ -17,9 +17,12 @@ app.use(
 // Serve static assets
 app.use(express.static(path.resolve(__dirname, "..", "build")));
 
-app.get("/api/movies", async (req, res) => {
+app.get("/api/moviedata", async (req, res) => {
   try {
-    const movies = await db.select().table("movies");
+    const movies = await db.select()
+    .from("metadata")
+    .join('poster', 'metadata.imdb_id', '=', 'poster.imdb_id')
+    .join('keywords', 'metadata.movie_id', '=', 'keywords.movie_id')
     res.json(movies);
   } catch (err) {
     console.error("Error loading locations!", err);
