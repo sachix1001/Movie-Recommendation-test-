@@ -17,9 +17,9 @@ metadata = metadata
 console.log(metadata.length)
 exports.seed = function(knex) {
   // Deletes ALL existing entries
-  return knex('metadata').del()
-    .then(function () {
-      // Inserts seed entries
-      return knex('metadata').insert(metadata);
-    });
+  // return knex('metadata').del()
+  //   .then(function () {
+  //     // Inserts seed entries
+  //     return knex('metadata').insert(metadata);
+  //   });
 };

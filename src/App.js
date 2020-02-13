@@ -1,24 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from "react";
+import "./App.css";
+import { setAllMovies, setAllExceptSelected } from "./redux/redux";
+import { useSelector, useDispatch } from "react-redux";
+import axios from "axios";
+import Movies from "./Movies";
 
 function App() {
+  const dispatch = useDispatch();
+
+
+  useEffect(() => {
+    axios.get("/api/moviedata").then(res => {
+      dispatch(setAllMovies(res.data));
+      dispatch(setAllExceptSelected(res.data));
+    });
+  }, [dispatch]);
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <nav>
+        <h1 id="title">Movie Recommendation</h1>
+        
+      </nav>
+      <div className='wrapper'>
+        <Movies></Movies>
+      </div>
     </div>
   );
 }

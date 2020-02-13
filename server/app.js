@@ -20,9 +20,7 @@ app.use(express.static(path.resolve(__dirname, "..", "build")));
 app.get("/api/moviedata", async (req, res) => {
   try {
     const movies = await db.select()
-    .from("metadata")
-    .join('poster', 'metadata.imdb_id', '=', 'poster.imdb_id')
-    .join('keywords', 'metadata.movie_id', '=', 'keywords.movie_id')
+    .from("movies")
     res.json(movies);
   } catch (err) {
     console.error("Error loading locations!", err);
