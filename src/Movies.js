@@ -14,6 +14,7 @@ function Movies() {
     maxSimilarDocuments: 100
   });
 
+ 
   function movieSelected(movie) {
     dispatch(selectMovie(movie));
     console.log("allMovies", allMovies);
@@ -84,6 +85,7 @@ function Movies() {
                 src={movie.poster}
                 key={movie.id}
                 onClick={e => movieSelected(movie)}
+                alt={movie.title}
               />
             </div>
           );
