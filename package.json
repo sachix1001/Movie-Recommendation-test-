@@ -8,6 +8,8 @@
     "@testing-library/user-event": "^7.1.2",
     "convert-csv-to-json": "^0.0.15",
     "csvtojson": "^2.0.10",
+    "knex": "^0.20.9",
+    "pg": "^7.18.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-scripts": "3.3.1"
@@ -16,7 +18,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "migrate": "knex migrate:latest",
+    "rollback": "knex migrate:rollback"
   },
   "eslintConfig": {
     "extends": "react-app"
