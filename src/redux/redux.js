@@ -18,6 +18,13 @@ export const selectMovie = movie => {
     movie
   };
 };
+
+export const selectMovieByTitle = movie => {
+  return {
+    type: "SELECT_BY_TITLE",
+    movie
+  };
+};
 export const setAllExceptSelected = movies => {
   return {
     type: "CREATE_EXCEPTSELECTED",
@@ -25,12 +32,12 @@ export const setAllExceptSelected = movies => {
   };
 };
 
-export const deleteSelected = movie =>{
+export const deleteSelected = title => {
   return {
-    type : 'DELETE_SELECTED',
-    movie
-  }
-}
+    type: "DELETE_SELECTED",
+    title
+  };
+};
 
 const reducer = (state = initialState, action) => {
   // eslint-disable-next-line default-case
@@ -39,6 +46,8 @@ const reducer = (state = initialState, action) => {
       return { ...state, allMovies: action.movies };
     }
     case "SELECT_MOVIE": {
+      console.log('action',action.movie)
+      console.log('state.selected',state.selected)
       return { ...state, selected: [...state.selected, action.movie] };
     }
     case "CREATE_EXCEPTSELECTED": {
@@ -46,10 +55,13 @@ const reducer = (state = initialState, action) => {
     }
     case "DELETE_SELECTED": {
       const removed = [...state.selected].filter(movie => {
-       return  movie.id !== action.movie.id
-      })
-      return {...state, selected : removed}
-
+        return movie.id !== action.movie.id;
+      });
+      return { ...state, selected: removed };
+    }
+    case  "SELECT_BY_TITLE": {
+      const movie = state.allMovies.find(movie => movie.title == action.title);
+      return { ...state, selected: [...state.selected, movie] };
     }
   }
   return state;

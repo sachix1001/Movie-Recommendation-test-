@@ -4,7 +4,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import CancelIcon from "@material-ui/icons/Cancel";
 import Button from "@material-ui/core/Button";
-import { deleteSelected } from "./redux/redux";
+import { deleteSelected, selectMovieByTitle , selectMovie} from "./redux/redux";
 import TextField from "@material-ui/core/TextField";
 import Autocomplete from "@material-ui/lab/Autocomplete";
 
@@ -25,15 +25,24 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-function selectMovie(title){
-  const movie = 
-}
-
 export default function CustomizedInputBase() {
   const classes = useStyles();
   const selected = useSelector(state => state.selected);
   const allMovies = useSelector(state => state.allMovies);
   const dispatch = useDispatch();
+
+  // async function selectMovie(title) {
+    
+  //   // console.log("why", selected);
+  //   if (title) {
+  //     const movie = await allMovies.find(movie => movie.title == title)
+  //     dis(movie)
+  //   }
+  // }
+  // function dis(movie){
+  //   dispatch(selectMovie(movie));
+
+  // }
 
   function unselect(movie) {
     dispatch(deleteSelected(movie));
@@ -47,7 +56,7 @@ export default function CustomizedInputBase() {
           id="free-solo-demo"
           freeSolo
           options={allMovies.map(option => option.title)}
-          onChange={(e,value)=>selectMovie(value)}
+          onChange={(e, value) => selectMovie(value)}
           renderInput={params => (
             <TextField
               {...params}
