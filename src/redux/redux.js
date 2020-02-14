@@ -2,7 +2,7 @@ import { createStore } from "redux";
 
 const initialState = {
   allMovies: [],
-  selected: {},
+  selected: [],
   allExceptSelected: []
 };
 
@@ -32,7 +32,7 @@ const reducer = (state = initialState, action) => {
       return { ...state, allMovies: action.movies };
     }
     case "SELECT_MOVIE": {
-      return { ...state, selected: action.movie };
+      return { ...state, selected: [...state.selected, action.movie] };
     }
     case "CREATE_EXCEPTSELECTED": {
       // const allExceptSelected = state.allMovies.filter(

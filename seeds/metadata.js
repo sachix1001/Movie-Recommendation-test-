@@ -14,7 +14,6 @@ metadata = metadata
 // pick populer one
 // metadata = metadata.filter(data=> data.popularity > 5)
 
-console.log(metadata.length)
 exports.seed = function(knex) {
   // Deletes ALL existing entries
   // return knex('metadata').del()
