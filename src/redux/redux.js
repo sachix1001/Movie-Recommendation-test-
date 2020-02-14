@@ -46,8 +46,7 @@ const reducer = (state = initialState, action) => {
       return { ...state, allMovies: action.movies };
     }
     case "SELECT_MOVIE": {
-      console.log('action',action.movie)
-      console.log('state.selected',state.selected)
+ 
       return { ...state, selected: [...state.selected, action.movie] };
     }
     case "CREATE_EXCEPTSELECTED": {
@@ -60,8 +59,9 @@ const reducer = (state = initialState, action) => {
       return { ...state, selected: removed };
     }
     case  "SELECT_BY_TITLE": {
-      const movie = state.allMovies.find(movie => movie.title == action.title);
-      return { ...state, selected: [...state.selected, movie] };
+      let detail =''
+      state.allMovies.map(movie => movie.title===action.movie? detail= movie: null);
+      return { ...state, selected: [...state.selected, detail] };
     }
   }
   return state;

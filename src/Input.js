@@ -31,18 +31,17 @@ export default function CustomizedInputBase() {
   const allMovies = useSelector(state => state.allMovies);
   const dispatch = useDispatch();
 
-  // async function selectMovie(title) {
+  async function selectMovie(title) {
     
-  //   // console.log("why", selected);
-  //   if (title) {
-  //     const movie = await allMovies.find(movie => movie.title == title)
-  //     dis(movie)
-  //   }
-  // }
-  // function dis(movie){
-  //   dispatch(selectMovie(movie));
+    if (title) {
+      const movie = await allMovies.find(movie => movie.title == title)
+      dis(title)
+    }
+  }
+  function dis(movie){
+    dispatch(selectMovieByTitle(movie));
 
-  // }
+  }
 
   function unselect(movie) {
     dispatch(deleteSelected(movie));
