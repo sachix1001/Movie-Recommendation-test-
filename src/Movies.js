@@ -4,8 +4,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { selectMovie, setAllExceptSelected } from "./redux/redux";
 import ContentBasedRecommender from "content-based-recommender";
 import Box from "@material-ui/core/Box";
-import Popover from "@material-ui/core/Popover";
-import Typography from "@material-ui/core/Typography";
+// import Popover from "@material-ui/core/Popover";
+// import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import CardMedia from "@material-ui/core/CardMedia";
 import Card from "@material-ui/core/Card";
@@ -108,8 +108,8 @@ function Movies() {
                     onClick={() => movieSelected(movie)}
                     aria-owns={open ? "mouse-over-popover" : undefined}
                     aria-haspopup="true"
-                    onMouseEnter={handlePopoverOpen}
-                    onMouseLeave={handlePopoverClose}
+                    // onMouseEnter={handlePopoverOpen}
+                    // onMouseLeave={handlePopoverClose}
                   />
                 </Card>
               </Box>
