@@ -4,6 +4,11 @@ import { useSelector, useDispatch } from "react-redux";
 import { selectMovie, setAllExceptSelected } from "./redux/redux";
 import ContentBasedRecommender from "content-based-recommender";
 import Box from "@material-ui/core/Box";
+import Popover from "@material-ui/core/Popover";
+import Typography from "@material-ui/core/Typography";
+import { makeStyles } from "@material-ui/core/styles";
+import CardMedia from "@material-ui/core/CardMedia";
+import Card from "@material-ui/core/Card";
 
 function Movies() {
   const allMovies = useSelector(state => state.allMovies);
@@ -16,18 +21,13 @@ function Movies() {
   });
 
   function movieSelected(movie) {
-    // console.log(movie)
     dispatch(selectMovie(movie));
-    // console.log("allMovies", allMovies);
-    // console.log("selected", selected);
-    // console.log("allExceptSelected", allExceptSelected);
     const exceptSelected = allMovies.filter(elem => elem.id !== movie.id);
     dispatch(setAllExceptSelected(exceptSelected));
   }
 
   // create recommendation
   useEffect(() => {
-    // filter not needed info
     if (selected.length !== 0) {
       const filtered = allMovies.map(movie => {
         return { id: movie.id, content: movie.content };
@@ -55,83 +55,91 @@ function Movies() {
         const pick = allMovies.find(movie => movie.id === ranking.id);
         orderedMovies.push(pick);
       });
-      console.log('similarDocuments',similarDocuments)
- 
+
       dispatch(setAllExceptSelected(orderedMovies));
     }
     // setOrder(orderedMovies)
   }, [selected, allMovies]);
 
-  // useEffect(() => {
-  //   console.log("selected", selected);
-  // }, [selected]);
+  const useStyles = makeStyles(theme => ({
+    popover: {
+      pointerEvents: "none"
+    },
+    paper: {
+      padding: theme.spacing(1)
+    }
+  }));
+
+  const classes = useStyles();
+  const [anchorEl, setAnchorEl] = React.useState(null);
+
+  const handlePopoverOpen = event => {
+    console.log(event.currentTarget);
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handlePopoverClose = () => {
+    setAnchorEl(null);
+  };
+
+  const open = Boolean(anchorEl);
 
   return (
     <div style={{ width: "100%" }}>
       <Box
         display="flex"
         flexWrap="wrap"
-        p={0}
+        p={1}
         m={0}
         // bgcolor="background.paper"
         // css={{ maxWidth: 100% }}
       >
         {allExceptSelected.map((movie, i) => {
           return (
-            <Box p={0} bgcolor="grey.900" className="movie-card">
-              <div className="ranking"></div>
-              <img
-                className="movie-img"
-                src={movie.poster}
-                key={movie.id}
-                alt={movie.title}
-                onClick={e => movieSelected(movie)}
-              />
-            </Box>
+            <>
+              <Box p={0} bgcolor="grey.900" className="movie-card">
+                <Card>
+                  <CardMedia
+                    component="img"
+                    className="movie-img"
+                    image={movie.poster}
+                    key={movie.id}
+                    alt={movie.title}
+                    onClick={() => movieSelected(movie)}
+                    aria-owns={open ? "mouse-over-popover" : undefined}
+                    aria-haspopup="true"
+                    onMouseEnter={handlePopoverOpen}
+                    onMouseLeave={handlePopoverClose}
+                  />
+                </Card>
+              </Box>
+              {/* <Popover
+                id="mouse-over-popover"
+                className={classes.popover}
+                classes={{
+                  paper: classes.paper
+                }}
+                open={open}
+                anchorEl={anchorEl}
+                anchorOrigin={{
+                  vertical: "bottom",
+                  horizontal: "left"
+                }}
+                transformOrigin={{
+                  vertical: "top",
+                  horizontal: "left"
+                }}
+                onClose={handlePopoverClose}
+                disableRestoreFocus
+              >
+                <Typography>{e => e.target}</Typography>
+              </Popover> */}
+            </>
           );
         })}
       </Box>
     </div>
   );
-}
-{
-  /* // <div className="App">
-    //   <div className="container">
-        // {selected ? (
-          <div className="favorite-movie-card memox">
-            <img src={frame} className='frame' alt='frame'/>
-            <h3 className="ranking" id='select'>
-              Select Your Favorite Movie
-            </h3>
-            <img
-              className="movie-img"
-              id="favorite"
-              src={selected.poster}
-            />
-          </div>
-        ) : null}
-        <div className="place-holder">
-        </div>
-        <div className="movie-card">
-        </div>
-        {allExceptSelected.map((movie, i) => {
-          return (
-            <div className="movie-card">
-              <div className="ranking">{i + 1}</div>
-              <img
-                className="movie-img"
-                src={movie.poster}
-                key={movie.id}
-                onClick={e => movieSelected(movie)}
-                alt={movie.title}
-              />
-            </div>
-          );
-        })}
-      </div>
-    </div>
-  );
-} */
 }
 
 export default Movies;

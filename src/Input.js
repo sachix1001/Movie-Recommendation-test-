@@ -2,14 +2,14 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
-import InputBase from "@material-ui/core/InputBase";
 import Divider from "@material-ui/core/Divider";
 import IconButton from "@material-ui/core/IconButton";
-import MenuIcon from "@material-ui/icons/Menu";
 import SearchIcon from "@material-ui/icons/Search";
 import CancelIcon from "@material-ui/icons/Cancel";
 import Button from "@material-ui/core/Button";
 import { deleteSelected } from "./redux/redux";
+import TextField from "@material-ui/core/TextField";
+import Autocomplete from "@material-ui/lab/Autocomplete";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -38,23 +38,30 @@ const useStyles = makeStyles(theme => ({
 export default function CustomizedInputBase() {
   const classes = useStyles();
   const selected = useSelector(state => state.selected);
+  const allMovies = useSelector(state => state.allMovies);
   const dispatch = useDispatch();
 
-  function unselect(movie){
-    
-    dispatch(deleteSelected(movie))
+  function unselect(movie) {
+    dispatch(deleteSelected(movie));
   }
 
   return (
     <>
       <Paper component="form" className={classes.root}>
-        <IconButton className={classes.iconButton} aria-label="menu">
-          {/* <MenuIcon /> */}
-        </IconButton>
-        <InputBase
+        <Autocomplete
           className={classes.input}
-          placeholder="Search Your Favorite Movie"
-          inputProps={{ "aria-label": "search google maps" }}
+          id="free-solo-demo"
+          freeSolo
+          options={allMovies.map(option => option.title)}
+          renderInput={params => (
+            <TextField
+              {...params}
+              label="Search Your Favorite Movie"
+              margin="normal"
+              variant="outlined"
+              fullWidth
+            />
+          )}
         />
         <IconButton
           type="button"

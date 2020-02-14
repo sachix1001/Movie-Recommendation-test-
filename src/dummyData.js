@@ -188,7 +188,7 @@ const dummy = [
     "popularity": "13.373006",
     "score": 7.7,
     "title": "Philadelphia (1993)",
-    "poster": "https://images-na.ssl-images-amazon.com/images/M/MV5BMjI3NjEwODYyMF5BMl5BanBnXkFtZTgwMzg3ODYxMTE@._V1_UX182_CR0",
+    "poster": "https://images-na.ssl-images-amazon.com/images/M/MV5BMjI3NjEwODYyMF5BMl5BanBnXkFtZTgwMzg3ODYxMTE@._V1_UX182_CR0.jpeg",
     "keywords": "[{'id': 237, 'name': 'gay'}, {'id': 740, 'name': 'aids'}, {'id': 1013, 'name': 'homophobia'}, {'id': 1417, 'name': 'jurors'}, {'id': 6148, 'name': 'court'}, {'id': 9104, 'name': 'partner'}, {'id': 9766, 'name': 'hiv'}, {'id': 10909, 'name': 'lawyer'}, {'id': 41589, 'name': 'dying'}, {'id': 186782, 'name': 'discrimination'}, {'id': 207968, 'name': 'judiciary'}]"
   },
   {
