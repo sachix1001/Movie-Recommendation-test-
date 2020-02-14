@@ -46,7 +46,6 @@ const reducer = (state = initialState, action) => {
       return { ...state, allMovies: action.movies };
     }
     case "SELECT_MOVIE": {
- 
       return { ...state, selected: [...state.selected, action.movie] };
     }
     case "CREATE_EXCEPTSELECTED": {
@@ -54,13 +53,15 @@ const reducer = (state = initialState, action) => {
     }
     case "DELETE_SELECTED": {
       const removed = [...state.selected].filter(movie => {
-        return movie.id !== action.movie.id;
+        return movie.id !== action.title.id;
       });
       return { ...state, selected: removed };
     }
-    case  "SELECT_BY_TITLE": {
-      let detail =''
-      state.allMovies.map(movie => movie.title===action.movie? detail= movie: null);
+    case "SELECT_BY_TITLE": {
+      let detail = "";
+      state.allMovies.map(movie =>
+        movie.title === action.movie ? (detail = movie) : null
+      );
       return { ...state, selected: [...state.selected, detail] };
     }
   }
