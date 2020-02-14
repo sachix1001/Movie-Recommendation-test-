@@ -10,9 +10,7 @@ function App() {
 
   useEffect(() => {
     axios.get("/api/moviedata").then(res => {
-      const moviesWithPoster = res.data.filter(movie =>
-        axios.get(movie.poster).then(res => res.status) !== 404
-      );
+      const movies = 
       dispatch(setAllMovies(res.data));
       dispatch(setAllExceptSelected(res.data));
     });
