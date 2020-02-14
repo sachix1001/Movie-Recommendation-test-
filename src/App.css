@@ -38,9 +38,16 @@
 }
 
 .movie-img{
-  width: 100px
+  width: 10%;
 }
-
+.nav-bar{
+  background-color:#000000d4;
+  color : white;
+  padding: 1px;
+  margin-bottom: 10px;
+  text-align: initial;
+  font-size: 12px;
+}
 .movie-card {
   flex: 0 0 12.666667%;
   max-width: 9.666667%;

@@ -8,13 +8,14 @@ import { deleteSelected, selectMovieByTitle , selectMovie} from "./redux/redux";
 import TextField from "@material-ui/core/TextField";
 import Autocomplete from "@material-ui/lab/Autocomplete";
 
+
 const useStyles = makeStyles(theme => ({
   root: {
     padding: "0.5% 1%",
     display: "inline-flex",
     alignItems: "center",
-    width: 400,
-    margin: "8px"
+    width: "30%",
+    margin: "10px"
   },
   input: {
     marginLeft: theme.spacing(0),

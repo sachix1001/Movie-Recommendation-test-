@@ -7,6 +7,7 @@ import Movies from "./Movies";
 import Input from "./Input";
 import dummy from "./dummyData.js";
 
+
 function App() {
   const dispatch = useDispatch();
 
@@ -47,10 +48,10 @@ function App() {
 
   return (
     <div className="App">
-      <nav>
+      <nav className='nav-bar'>
         <h1 id="title">Movie Recommendation</h1>
-        <Input />
       </nav>
+        <Input />
       <div className="wrapper">
         <Movies></Movies>
       </div>

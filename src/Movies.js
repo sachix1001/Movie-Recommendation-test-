@@ -67,7 +67,8 @@ function Movies() {
     },
     paper: {
       padding: theme.spacing(1)
-    }
+    },
+
   }));
 
   const classes = useStyles();
@@ -91,13 +92,13 @@ function Movies() {
         flexWrap="wrap"
         p={1}
         m={0}
+        t={10}
         // bgcolor="background.paper"
         // css={{ maxWidth: 100% }}
       >
         {allExceptSelected.map((movie, i) => {
           return (
-            <>
-              <Box p={0} bgcolor="grey.900" className="movie-card">
+              <Box p={0} bgcolor="grey.900" className="movie-card" key={movie.id}>
                 <Card>
                   <CardMedia
                     component="img"
@@ -113,28 +114,6 @@ function Movies() {
                   />
                 </Card>
               </Box>
-              {/* <Popover
-                id="mouse-over-popover"
-                className={classes.popover}
-                classes={{
-                  paper: classes.paper
-                }}
-                open={open}
-                anchorEl={anchorEl}
-                anchorOrigin={{
-                  vertical: "bottom",
-                  horizontal: "left"
-                }}
-                transformOrigin={{
-                  vertical: "top",
-                  horizontal: "left"
-                }}
-                onClose={handlePopoverClose}
-                disableRestoreFocus
-              >
-                <Typography>{e => e.target}</Typography>
-              </Popover> */}
-            </>
           );
         })}
       </Box>
