@@ -11,7 +11,12 @@ function App() {
   const dispatch = useDispatch();
 
   const dummyWithContent = dummy.dummy.map(movie => {
-    return { id: movie.id, content: movie.genres.concat(movie.overview, movie.keywords) , poster: movie.poster};
+    return {
+      id: movie.id,
+      content: movie.genres.concat(movie.overview, movie.keywords),
+      poster: movie.poster,
+      title:movie.title
+    };
   });
   dispatch(setAllMovies(dummyWithContent));
   dispatch(setAllExceptSelected(dummyWithContent));
@@ -19,7 +24,12 @@ function App() {
   useEffect(() => {
     axios.get("/api/moviedata").then(res => {
       const movies = res.data.map(movie => {
-        return { id: movie.id, content: movie.genres.concat(movie.overview, movie.keywords) , poster: movie.poster};
+        return {
+          id: movie.id,
+          content: movie.genres.concat(movie.overview, movie.keywords),
+          poster: movie.poster,
+          title: movie.title
+        };
       });
       dispatch(setAllMovies(movies));
       dispatch(setAllExceptSelected(movies));

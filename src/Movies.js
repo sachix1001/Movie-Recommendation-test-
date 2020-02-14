@@ -48,7 +48,7 @@ function Movies() {
       recommender.train(filtered);
 
       //get top 10 similar items favorite
-      const similarDocuments = recommender.getSimilarDocuments(0, 0, 2000);
+      const similarDocuments = recommender.getSimilarDocuments(0, 0, 3000);
       // order exceptedList
       const orderedMovies = [];
       similarDocuments.forEach(ranking => {
@@ -56,7 +56,7 @@ function Movies() {
         orderedMovies.push(pick);
       });
       console.log('similarDocuments',similarDocuments)
-      console.log("orderedMovies", orderedMovies);
+ 
       dispatch(setAllExceptSelected(orderedMovies));
     }
     // setOrder(orderedMovies)
@@ -79,13 +79,13 @@ function Movies() {
         {allExceptSelected.map((movie, i) => {
           return (
             <Box p={0} bgcolor="grey.900" className="movie-card">
-              <div className="ranking">{i + 1}</div>
+              <div className="ranking"></div>
               <img
                 className="movie-img"
                 src={movie.poster}
                 key={movie.id}
-                onClick={e => movieSelected(movie)}
                 alt={movie.title}
+                onClick={e => movieSelected(movie)}
               />
             </Box>
           );

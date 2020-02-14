@@ -188,7 +188,7 @@
     "popularity": "13.373006",
     "score": 7.7,
     "title": "Philadelphia (1993)",
-    "poster": "https://images-na.ssl-images-amazon.com/images/M/MV5BMjI3NjEwODYyMF5BMl5BanBnXkFtZTgwMzg3ODYxMTE@._V1_UX182_CR0",
+    "poster": "https://img.moviepostershop.com/philadelphia-movie-poster-1993-1020210611.jpg",
     "keywords": "[{'id': 237, 'name': 'gay'}, {'id': 740, 'name': 'aids'}, {'id': 1013, 'name': 'homophobia'}, {'id': 1417, 'name': 'jurors'}, {'id': 6148, 'name': 'court'}, {'id': 9104, 'name': 'partner'}, {'id': 9766, 'name': 'hiv'}, {'id': 10909, 'name': 'lawyer'}, {'id': 41589, 'name': 'dying'}, {'id': 186782, 'name': 'discrimination'}, {'id': 207968, 'name': 'judiciary'}]"
   },
   {
@@ -200,7 +200,7 @@
     "popularity": "12.048587",
     "score": 7.5,
     "title": "Searching for Bobby Fischer (1993)",
-    "poster": "https://images-na.ssl-images-amazon.com/images/M/MV5BMTI3NzY3ODg3N15BMl5BanBnXkFtZTcwNzU1NzcyMQ@@._V1_UY268_CR4",
+    "poster": "https://img.moviepostershop.com/searching-for-bobby-fischer-movie-poster-1993-1020210889.jpg",
     "keywords": "[{'id': 316, 'name': 'chess'}, {'id': 2348, 'name': 'hustler'}, {'id': 5561, 'name': 'child prodigy'}, {'id': 14512, 'name': 'new york city'}]"
   },
   {
@@ -467,18 +467,7 @@
     "poster": "https://images-na.ssl-images-amazon.com/images/M/MV5BMDI3OWRmOTEtOWJhYi00N2JkLTgwNGItMjdkN2U0NjFiZTYwXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_UX182_CR0",
     "keywords": "[{'id': 612, 'name': 'hotel'}, {'id': 1443, 'name': 'clerk'}, {'id': 1859, 'name': 'arizona'}, {'id': 1879, 'name': 'shower'}, {'id': 2217, 'name': 'rain'}, {'id': 2669, 'name': 'motel'}, {'id': 10594, 'name': 'money'}, {'id': 11677, 'name': 'secretary'}, {'id': 13092, 'name': 'corpse'}, {'id': 13112, 'name': 'murderer'}, {'id': 14604, 'name': 'theft'}, {'id': 155790, 'name': 'private detective'}, {'id': 233450, 'name': 'proto-slasher'}]"
   },
-  {
-    "id": 32636,
-    "movie_id": 525,
-    "genres": "[{'id': 10402, 'name': 'Music'}, {'id': 35, 'name': 'Comedy'}, {'id': 28, 'name': 'Action'}, {'id': 80, 'name': 'Crime'}]",
-    "imdb_id": 80455,
-    "overview": "Jake Blues is just out of jail, and teams up with his brother, Elwood on a 'mission from God' to raise funds for the orphanage in which they grew up. The only thing they can do is do what they do best – play music – so they get their old band together and they're on their way, while getting in a bit of trouble here and there.",
-    "popularity": "10.076901",
-    "score": 7.9,
-    "title": "The Blues Brothers (1980)",
-    "poster": "https://images-na.ssl-images-amazon.com/images/M/MV5BMzdhOTJmYmQtMmE0OS00ZDMyLWFkZDItZmZmMGJlNGUyNjNhXkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_UX182_CR0",
-    "keywords": "[{'id': 246, 'name': 'dancing'}, {'id': 378, 'name': 'prison'}, {'id': 520, 'name': 'chicago'}, {'id': 727, 'name': 'country music'}, {'id': 745, 'name': 'nun'}, {'id': 1416, 'name': 'jazz'}, {'id': 1926, 'name': 'car journey'}, {'id': 2636, 'name': 'blues'}, {'id': 2652, 'name': 'nazis'}, {'id': 6027, 'name': 'music'}, {'id': 6029, 'name': 'concert'}, {'id': 6031, 'name': 'music instrument'}, {'id': 6272, 'name': \"children's home\"}, {'id': 6490, 'name': 'shopping mall'}, {'id': 6783, 'name': 'orphanage'}, {'id': 11313, 'name': 'winnebago'}, {'id': 14765, 'name': 'church'}, {'id': 15211, 'name': 'sunglasses'}, {'id': 15232, 'name': 'parole'}, {'id': 15483, 'name': 'car chase'}, {'id': 41591, 'name': 'music band'}, {'id': 156336, 'name': 'loudspeaker'}, {'id': 167213, 'name': 'saturday night live'}, {'id': 226464, 'name': 'wrigley field'}, {'id': 226465, 'name': 'holiday inn'}]"
-  },
+
   {
     "id": 32655,
     "movie_id": 763,
@@ -7931,18 +7920,7 @@
     "poster": "https://images-na.ssl-images-amazon.com/images/M/MV5BMTYwMjAyMTA1OF5BMl5BanBnXkFtZTcwMzIzMjExOQ@@._V1_UY268_CR3",
     "keywords": "[{'id': 1157, 'name': 'wife husband relationship'}, {'id': 1842, 'name': 'village life'}, {'id': 11322, 'name': 'female protagonist'}]"
   },
-  {
-    "id": 57705,
-    "movie_id": 140300,
-    "genres": "[{'id': 28, 'name': 'Action'}, {'id': 12, 'name': 'Adventure'}, {'id': 16, 'name': 'Animation'}, {'id': 35, 'name': 'Comedy'}, {'id': 10751, 'name': 'Family'}]",
-    "imdb_id": 2267968,
-    "overview": "Continuing his \"legendary adventures of awesomeness\", Po must face two hugely epic, but different threats: one supernatural and the other a little closer to his home.",
-    "popularity": "14.696548",
-    "score": 7.2,
-    "title": "Kung Fu Panda 3 (2016)",
-    "poster": "https://images-na.ssl-images-amazon.com/images/M/MV5BMTUyNzgxNjg2M15BMl5BanBnXkFtZTgwMTY1NDI1NjE@._V1_UX182_CR0",
-    "keywords": "[{'id': 478, 'name': 'china'}, {'id': 779, 'name': 'martial arts'}, {'id': 780, 'name': 'kung fu'}, {'id': 5331, 'name': 'village'}, {'id': 8531, 'name': 'panda'}, {'id': 9663, 'name': 'sequel'}, {'id': 11477, 'name': 'talking animal'}, {'id': 11500, 'name': 'anthropomorphism'}, {'id': 12554, 'name': 'dragon'}, {'id': 15036, 'name': 'ancient china'}, {'id': 184656, 'name': 'wuxia'}, {'id': 187056, 'name': 'woman director'}]"
-  },
+  
   {
     "id": 37563,
     "movie_id": 23908,

@@ -1,5 +1,9 @@
 let allData = require("../data/allData.json");
+const _ = require('lodash')
+
+allData = _.uniqBy(allData, 'movie_id'); 
 allData = allData
+.filter(data => data.popularity > 8 && data.popularity < 10)
   .map(data => {
     return {
       movie_id: data.movie_id,
