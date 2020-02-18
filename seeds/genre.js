@@ -1,4 +1,5 @@
 let allData = require("../data/allData.json");
+let ratings = require("../data/ratings.json");
 const _ = require('lodash')
 
 allData = _.uniqBy(allData, 'movie_id'); 
@@ -16,6 +17,8 @@ allData = allData
       keywords: data.keywords
     };
   });
+
+
 
 exports.seed = function(knex) {
   // Deletes ALL existing entries
